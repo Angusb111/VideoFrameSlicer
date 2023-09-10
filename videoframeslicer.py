@@ -52,7 +52,7 @@ def callback(input):
     if input.isdigit():
         return True
                         
-    elif input is "":
+    elif input == "":
         return True
 
     else:
@@ -61,8 +61,9 @@ def callback(input):
 window = tk.Tk()
 window.geometry("650x500")
 window.resizable(False, False)
-small_icon = tk.PhotoImage(file="img100.png")
-large_icon = tk.PhotoImage(file="IMG_64.png")
+small_icon = tk.PhotoImage(file=os.path.join("res", "img", "img100.png"))
+large_icon = tk.PhotoImage(file=os.path.join("res", "img", "IMG_64.png"))
+
 window.iconphoto(True, large_icon, small_icon)
 
 window.title('VideoFrameSlicer')
@@ -177,7 +178,7 @@ activate.pack_propagate(False)
 activate.grid_rowconfigure(0, weight=1, minsize=50)
 activate.grid_columnconfigure(0, weight=1, minsize=50)
 
-start_btn= tk.PhotoImage(file='start.png')
+start_btn= tk.PhotoImage(file=os.path.join("res", "img", "start.png"))
 capture_button = tk.Button(master=activate, image=start_btn, relief="flat", bg="#111418", bd=0, activebackground='#111418', command=start_main)
 capture_button.grid(row=0, column=0, sticky="nsew")
 
